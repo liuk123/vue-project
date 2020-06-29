@@ -2,13 +2,18 @@
   "name": "vue-frame",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build:prod": "webpack --config build/webpack.prod.js",
-    "build:style": "gulp --gulpfile build/gen-style.js"
+    "build:style": "gulp --gulpfile build/gen-style.js",
+    "build:component": "webpack --config build/webpack.component.js",
+    "lib": "npm run build:prod && npm run build:component && npm run build:style"
   },
   "keywords": [],
-  "author": "",
+  "author": "liuk123",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -22,12 +27,11 @@
     "gulp-rename": "^2.0.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {
-    "vue-loader": "^15.9.2"
-  }
+  "dependencies": {}
 }
